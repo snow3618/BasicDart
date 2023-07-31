@@ -11,16 +11,18 @@ void main(){
     while( randNo != guessNo){
         count++;
         print("Try guess no again:");
-        int? guessNo = int.parse(stdin.readLineSync()!);
+        guessNo = int.parse(stdin.readLineSync()!);
         
         if( randNo > guessNo){
             print('Your guess is too low');
-        }else {
+        }else if(randNo< guessNo) {
             print('Your guess is too height');
+        }else{
+            break;
         }
     }
     print('You are right!!!');
-    if (count >3) {
+    if (count >=3) {
         print('But You are not good at guessing!!!');
     }
     
